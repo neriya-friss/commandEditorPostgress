@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="/stylesheets/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css"> 
+        <title> Welcome </title>
+    </head>
+    <body>
+        <% if(session.user_id) { %>
+            <div class="header">
+                <a href="/logout" class="btn btn-primary logout_bth">התנתק</a>
+                <% if(role_id == 1) { %>
+                    <a href="#" class="btn btn-primary add_bth">הוסף משתמש</a>
+                <% } %>
+                <h1 class="mt-5  text-center "><b>  מחולל הפקודות </b></h1>
+                <P class="text-center">   <%= user_name %>  שלום </p>
+                <ul>
+                    <a href="/welcom"> <li> דף הבית </li> </a>
+                    <a href="/tamas_form"> <li> גאנט שיגורים  </li> </a>
+                    <a href="#"> <li> תשתיות </li> </a>
+                    <a href="#"> <li> תקיפות חיל האוויר </li> </a> 
+                    <a href="#"> <li> מטענים </li> </a>
+                    <a href="#"> <li> מנהרות </li> </a>
+
+                </ul>
+            </div>
+            <div class="container">
+                <div class="father" dir="rtl">
+                    <a href="/tamas_form"> 
+                        <div class="card card1">
+                            <div class="wrapper">
+                            <img src="../images/tamas3.png" class="cover-image" />
+                            </div> 
+                            <div class="title"> <h1> גאנט שיגורים </h1> </div>
+                            <img src="../images/tamas5.png" class="character" />
+                        </div>
+                    </a>
+                    
+                    <div class="card card1">
+                        <div class="wrapper">
+                        <img src="../images/dark_rider-cover.jpg" class="cover-image" />
+                        </div>
+                        <div class="title"> <h1>  תשתיות </h1> </div>
+                        <img src="../images/dark_rider-character.webp" class="character" />
+                    </div>
+
+                    <div class="card card1">
+                        <div class="wrapper">
+                        <img src="../images/force_mage-cover.jpg" class="cover-image" />
+                        </div>
+                        <div class="title"> <h1> תקיפות חיל האוויר  </h1> </div>
+                        <img src="../images/force_mage-character.webp" class="character" />
+                    </div>
+
+                    <div class="card card1">
+                        <div class="wrapper">
+                        <img src="../images/dark_rider-cover.jpg" class="cover-image" />
+                        </div>
+                        <div class="title"> <h1> מטענים  </h1> </div>
+                        <img src="../images/dark_rider-character.webp" class="character" />
+                    </div>
+
+                    <div class="card card1">
+                        <div class="wrapper">
+                        <img src="../images/force_mage-cover.jpg" class="cover-image" />
+                        </div>
+                        <div class="title"> <h1> מנהרות  </h1> </div>
+                        <img src="../images/force_mage-character.webp" class="character" />
+                    </div>
+                    
+                </div>
+                
+
+            </div>
+        <% } else { %>
+            <h1> אתה לא מחובר </h1>
+        <% } %>
+    </body>
+</html>
